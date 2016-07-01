@@ -9,12 +9,12 @@
  *  Maintainer: Expertinos UNIFEI (expertinos.unifei@gmail.com)
  */
 
-#include "unifei/expertinos/mrta_vc/utilities/MathManipulator.h"
+#include "unifei/expertinos/utilities/MathManipulator.h"
 
 /**
  *
  */
-int unifei::expertinos::mrta_vc::utilities::MathManipulator::getUnsignedRest(long dividend, int divisor)
+int unifei::expertinos::utilities::MathManipulator::getUnsignedRest(long dividend, int divisor)
 {
 	return (int) (dividend >= 0L
 								? dividend % divisor
@@ -24,9 +24,9 @@ int unifei::expertinos::mrta_vc::utilities::MathManipulator::getUnsignedRest(lon
 /**
  *
  */
-long unifei::expertinos::mrta_vc::utilities::MathManipulator::getUnsignedDivision(long dividend, int divisor)
+long unifei::expertinos::utilities::MathManipulator::getUnsignedDivision(long dividend, int divisor)
 {
 	return dividend >= 0L
-				 ? dividend / divisor
-				 : (dividend / divisor) - (dividend % divisor == 0 ? 0 : 1);
+			? dividend / divisor
+			: (dividend / divisor) - (dividend % divisor == 0 ? 0 : 1);
 }

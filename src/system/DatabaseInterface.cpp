@@ -16,6 +16,12 @@
  */
 unifei::expertinos::mrta_vc::system::DatabaseInterface::DatabaseInterface() 
 {	
+	agents_counter_ = 0;
+	allocations_counter_ = 0;
+	places_counter_ = 0;
+	resources_counter_ = 0;
+	skills_counter_ = 0;
+	tasks_counter_ = 0;
 }
 
 /**
@@ -618,7 +624,7 @@ unifei::expertinos::mrta_vc::agents::User unifei::expertinos::mrta_vc::system::D
 	int id = 0;
 	std::string name = "";
   unifei::expertinos::mrta_vc::agents::HierarchyLevelEnum hierarchy_level = unifei::expertinos::mrta_vc::agents::HierarchyLevels::getDefault();
-	unifei::expertinos::mrta_vc::agents::Computer computer(0, "");
+	unifei::expertinos::mrta_vc::agents::Computer computer;
 	// realizar consultas no DB para preencher o objeto a partir do seu login_name e enviá-lo
 	// Simulado, por enquanto
 	if (login_name == "adrianohrl") 
@@ -657,4 +663,58 @@ unifei::expertinos::mrta_vc::agents::User unifei::expertinos::mrta_vc::system::D
     computer = getComputer("audeliano-pc");
 	}
   return unifei::expertinos::mrta_vc::agents::User(id, name, hierarchy_level, login_name, computer);
+}
+
+/**
+ *
+ */
+int unifei::expertinos::mrta_vc::system::DatabaseInterface::generateNewAgentId()
+{
+	agents_counter_++;
+	return agents_counter_;
+}
+
+/**
+ *
+ */
+int unifei::expertinos::mrta_vc::system::DatabaseInterface::generateNewAllocationId()
+{
+	allocations_counter_++;
+	return allocations_counter_;
+}
+
+/**
+ *
+ */
+int unifei::expertinos::mrta_vc::system::DatabaseInterface::generateNewPlaceId()
+{
+	places_counter_++;
+	return places_counter_;
+}
+
+/**
+ *
+ */
+int unifei::expertinos::mrta_vc::system::DatabaseInterface::generateNewResourceId()
+{
+	resources_counter_++;
+	return resources_counter_;
+}
+
+/**
+ *
+ */
+int unifei::expertinos::mrta_vc::system::DatabaseInterface::generateNewSkillId()
+{
+	skills_counter_++;
+	return skills_counter_;
+}
+
+/**
+ *
+ */
+int unifei::expertinos::mrta_vc::system::DatabaseInterface::generateNewTaskId()
+{
+	tasks_counter_++;
+	return tasks_counter_;
 }

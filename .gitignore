@@ -41,6 +41,8 @@ Thumbs.db
 
 # ROS Bags#
 ###########
+bag/*
+bags/*
 *.bag
 *.pyc
 
@@ -48,3 +50,8 @@ Thumbs.db
 #############
 CMakeLists.txt.user
 CMakeLists.txt.*
+*.user
+*.config
+*.creator
+*.files
+*.includes
